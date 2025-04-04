@@ -17,15 +17,13 @@ while not done:
                         is_blue = not is_blue
         
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_UP] and y - 3 >= 0: y -= 3
-        if pressed[pygame.K_DOWN] and y + 3 <= 300: y += 3
-        if pressed[pygame.K_LEFT] and x - 3 >= 0: x -= 3
-        if pressed[pygame.K_RIGHT] and x + 3 <= 400: x += 3
+        if pressed[pygame.K_UP] and y - 3 >= 25: y -= 3
+        if pressed[pygame.K_DOWN] and y + 3 <= 275: y += 3
+        if pressed[pygame.K_LEFT] and x - 3 >= 25: x -= 3
+        if pressed[pygame.K_RIGHT] and x + 3 <= 375: x += 3
         
-        screen.fill((0, 0, 0))
-        if is_blue: color = (0, 128, 255)
-        else: color = (255, 100, 0)
-        pygame.draw.circle(screen, color, (x, y), 25)
+        screen.fill('white')
+        pygame.draw.circle(screen, 'red', (x, y), 25)
         
         pygame.display.flip()
         clock.tick(60)
